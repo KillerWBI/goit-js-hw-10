@@ -33,15 +33,23 @@ flatpickr( "#datetime-picker", {
 } );
 
 startButton.addEventListener('click', () => {
+
 startButton.disabled = true;
 datatePickerinput.disabled = true;
 
 const timerInterval = setInterval(() => {
     const currentDate = new Date()
     const timeDifference = userSelectedDate - currentDate;
+
     if (timeDifference <= 0){
         clearInterval(timerInterval);
-        timerDisplay.textContent = "Time's up!"
+        daysDisplay.textContent = '00';
+        hoursDisplay.textContent = '00';
+        minutesDisplay.textContent = '00';
+        secondsDisplay.textContent = '00';
+        datatePickerinput.disabled = false;
+        startButton.disabled = false;
+        alert("Time's up!");
         return;
     }
 
