@@ -15,10 +15,18 @@ forma.addEventListener('submit', (event) => {
 
 
 const createPromise = (type, delay) => {
-
+return new Promise( (resolve, reject) => {
+        setTimeout(() => {
+            if (type === 'fulfilled') {
+                resolve(`Fulfilled promise in ${delay} ms`);
+            } else if (type === 'rejected') {
+                reject(`Rejected promise in ${delay} ms`);
+            }
+        }, delay);
+})
 
 }
-
+console.log(inputType);
 
 
 
