@@ -23,7 +23,6 @@ flatpickr( "#datetime-picker", {
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
-    console.log(selectedDates[0]);
     const currentDate = new Date();
     if (selectedDates[0] < currentDate) {
       iziToast.show({
